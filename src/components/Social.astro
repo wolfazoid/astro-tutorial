@@ -1,0 +1,14 @@
+---
+const { platform, username } = Astro.props;
+const handle = platform === "linkedin" ? `in/${username}` : username;
+---
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #18187b;
+    text-decoration: none;
+  }
+</style>
+
+<a href={`https://www.${platform}.com/${handle}`} target="_blank">{platform}</a>
